@@ -26,13 +26,14 @@ export default function workdayPanel(
         context.subscriptions
       );
       panel.onDidDispose(() => {
-        context.workspaceState.update("data", getState());
+        persist(getState());
         panel = undefined;
       });
 
       panel.webview.html = getWebviewContent();
       context.subscriptions.push(panel);
       subscribe(render);
+      subscribe(persist);
     }
     return panel;
   };
@@ -40,6 +41,9 @@ export default function workdayPanel(
   const render = (state: State) => {
     panel?.webview.postMessage(state);
   };
+
+  const persist = (state: State) =>
+    context.workspaceState.update("data", state);
 
   const getPanel = () => panel;
 

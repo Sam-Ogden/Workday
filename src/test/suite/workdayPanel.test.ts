@@ -19,7 +19,7 @@ const INITIAL_STATE: State = {
 const getContext = () =>
   ({
     subscriptions: [],
-    workspaceState: new Map(),
+    workspaceState: { get: () => {}, update: () => {} },
   } as any);
 
 suite("Workday panel", () => {

@@ -17,13 +17,27 @@ const getWebviewContent = () => `
         <input id="new-todo" type="text" placeholder="Fix input bug" aria-label="Add todo. Press enter key to add." />
         <button type="submit">Add</button>
     </form>
-    <h1>Yesterday</h1>
+    <h2>Yesterday</h2>
     <ol id="yesterday"></ol>
     <script>
         const today = new Date().toLocaleDateString('en-us');
         const yesterday = new Date(new Date() - 86400000).toLocaleDateString('en-us');
         const vscode = acquireVsCodeApi();
         
+        const ESC_MAP = {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;",
+            };
+
+        function escapeHTML(s, forAttribute) {
+            return s.replace(forAttribute ? /[&<>'"]/g : /[&<>]/g, function (c) {
+                return ESC_MAP[c];
+            });
+        }
+
         function addTodo(target) {
             const todo = document.getElementById("new-todo").value;
             vscode.postMessage({
@@ -41,9 +55,8 @@ const getWebviewContent = () => `
             };
             const item = document.createElement("li");
             item.id = id;
-            item.setAttribute("data-date", date);
             item.addEventListener("click", handleClick);
-            item.innerHTML = title;
+            item.innerHTML = escapeHTML(title, false);
             const checkbox = document.createElement("input");
             checkbox.type = "checkbox";
             checkbox.checked = complete;

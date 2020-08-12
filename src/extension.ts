@@ -7,9 +7,9 @@ import createStatusBarItem from "./statusBarItem";
 import carryTodos from "./carryTodos";
 
 export function activate(context: vscode.ExtensionContext) {
-  let store = createStore(context.workspaceState.get("data"), reducer);
-  let panel = createWorkdayPanel(store, context);
-  let status = createStatusBarItem(store, context);
+  const store = createStore(context.workspaceState.get("data"), reducer);
+  const panel = createWorkdayPanel(store, context);
+  const status = createStatusBarItem(store, context);
 
   vscode.commands.registerCommand("workday.workday", () => {
     carryTodos(store, context);
