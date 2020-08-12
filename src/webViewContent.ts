@@ -47,7 +47,11 @@ const getWebviewContent = () => `
             const checkbox = document.createElement("input");
             checkbox.type = "checkbox";
             checkbox.checked = complete;
+            const deleteBtn = document.createElement("a");
+            deleteBtn.innerHTML = "Delete";
+            deleteBtn.addEventListener('click', () => vscode.postMessage({type: "${actions.DELETE_TODO}", payload: { id, date }}));
             item.appendChild(checkbox);
+            item.appendChild(deleteBtn);
             return item;
         }
 

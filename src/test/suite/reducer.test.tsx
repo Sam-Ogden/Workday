@@ -27,4 +27,12 @@ suite("Reducer", () => {
     });
     assert.equal(res[today][0].complete, true);
   });
+
+  test("delete todo action", () => {
+    const res = reducer(INITIAL_STATE, {
+      type: actions.DELETE_TODO,
+      payload: { id: INITIAL_STATE[today][0].id, date: today },
+    });
+    assert.equal(res[today].length, 0);
+  });
 });
