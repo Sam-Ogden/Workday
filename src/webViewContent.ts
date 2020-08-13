@@ -74,7 +74,10 @@ const getWebviewContent = () => `
             todayList.innerHTML = "";
             yesterdayList.innerHTML = "";
             state[today] && state[today].forEach((todo) => {
-                todayList.appendChild(createTodoElement(todo));
+                const item = createTodoElement(todo);
+                todo.complete 
+                    ? todayList.appendChild(item) 
+                    : todayList.prepend(item);
             });
 
             state[yesterday] && state[yesterday].forEach((todo) => {
