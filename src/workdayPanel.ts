@@ -7,7 +7,7 @@ export default function workdayPanel(
   context: vscode.ExtensionContext
 ) {
   let panel: vscode.WebviewPanel | undefined;
-  let columnToShowIn = vscode.ViewColumn.Beside;
+  let columnToShowIn = vscode.ViewColumn.Active;
 
   const init = () => {
     if (panel) {

@@ -3,6 +3,7 @@
   "displayName": "workday",
   "description": "Track tasks and be more productive with workday.",
   "version": "0.0.1",
+  "publisher": "samogden",
   "engines": {
     "vscode": "^1.47.0"
   },

@@ -1,6 +1,5 @@
 import * as assert from "assert";
 
-import * as vscode from "vscode";
 import workdayPanel from "../../workdayPanel";
 import Store from "../../store";
 import today from "../../today";

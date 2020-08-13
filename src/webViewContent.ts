@@ -46,7 +46,7 @@ const getWebviewContent = () => `
         }
 
         ul label {
-            font-size: 20px;
+            font-size: 18px;
             margin-right: 10px;
         }
 
