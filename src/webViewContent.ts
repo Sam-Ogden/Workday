@@ -101,7 +101,7 @@ const getWebviewContent = () => `
     <h1>Today</h1>
     <ul id="today"></ul>
     <form action="javascript:;" onsubmit="addTodo(this)">
-        <input id="new-todo" type="text" placeholder="What will you achieve?" aria-label="Add todo. Press enter key to add." />
+        <input id="new-todo" type="text" placeholder="Today I will:" aria-label="Add todo. Press enter key to add." />
     </form>
     <h1>Yesterday</h1>
     <ul id="yesterday"></ul>
@@ -146,7 +146,8 @@ const getWebviewContent = () => `
             const label = document.createElement("label")
             label.className = complete ? 'complete' : ''
             label.addEventListener("click", handleClick);
-            label.innerHTML = \`<span>\${escapeHTML(title, false)}</span>\`;
+            const todoTitle = \`\${title}\${date !== today ? \` \${date}\` : ''}\`
+            label.innerHTML = \`<span>\${escapeHTML(todoTitle, false)}</span>\`;
 
             const checkbox = document.createElement("input");
             checkbox.type = "checkbox";

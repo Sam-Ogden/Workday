@@ -12,7 +12,12 @@ export default function reducer(state: State, { type, payload }: Action) {
         ...state,
         [today]: [
           ...(state[today] ?? []),
-          { ...payload, id: getId(), date: today, complete: false },
+          {
+            date: today,
+            ...payload,
+            id: getId(),
+            complete: false,
+          },
         ],
       };
     case actions.TOGGLE_TODO:

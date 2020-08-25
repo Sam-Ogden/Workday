@@ -41,20 +41,6 @@ suite("Carry todos", () => {
     assert.equal(store.getState()[dayBeforeYesterday][0].id, "5");
   });
 
-  test("Appends created date to end of title", () => {
-    const store = createStore(INITIAL_STATE, reducer);
-    carryTodos(store, {
-      workspaceState: {
-        get: () => 0,
-        update: () => {},
-      },
-    } as any);
-    assert.equal(
-      store.getState()[today][1].title,
-      `${INITIAL_STATE[yesterday][0].title} (${INITIAL_STATE[yesterday][0].date})`
-    );
-  });
-
   test("Only carrys from dates after lastCarryUpdate date state value", () => {
     const store = createStore(INITIAL_STATE, reducer);
     carryTodos(store, {
