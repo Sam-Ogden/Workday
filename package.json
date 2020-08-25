@@ -1,14 +1,30 @@
 {
   "name": "workday",
-  "displayName": "workday",
+  "displayName": "Workday",
   "description": "Track tasks and be more productive with workday.",
   "version": "0.0.1",
   "publisher": "samogden",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sam-Ogden/Workday.git"
+  },
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#C80000",
+    "theme": "dark"
+  },
   "engines": {
     "vscode": "^1.47.0"
   },
   "categories": [
     "Other"
+  ],
+  "keywords": [
+    "Productivity",
+    "Todo",
+    "List",
+    "Time management"
   ],
   "activationEvents": [
     "onCommand:workday.workday"
@@ -18,7 +34,7 @@
     "commands": [
       {
         "command": "workday.workday",
-        "title": "Create something beautiful.",
+        "title": "Todo list",
         "category": "Workday"
       }
     ]
