@@ -2,7 +2,7 @@
   "name": "workday",
   "displayName": "Workday",
   "description": "Track tasks and be more productive with workday.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "publisher": "samogden",
   "license": "SEE LICENSE IN LICENSE.txt",
   "repository": {
