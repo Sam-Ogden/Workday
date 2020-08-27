@@ -5,7 +5,15 @@ import actions from "../../actions";
 import today from "../../today";
 
 const INITIAL_STATE = {
-  [today]: [{ id: "1", title: "todo 1", complete: false, date: today }],
+  [today]: [
+    {
+      id: "1",
+      title: "todo 1",
+      complete: false,
+      date: today,
+      createdDate: today,
+    },
+  ],
 };
 suite("Reducer", () => {
   test("Add todo action", () => {

@@ -13,8 +13,9 @@ export default function reducer(state: State, { type, payload }: Action) {
         [today]: [
           ...(state[today] ?? []),
           {
-            date: today,
+            createdDate: today,
             ...payload,
+            date: today,
             id: getId(),
             complete: false,
           },

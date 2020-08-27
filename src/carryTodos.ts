@@ -17,7 +17,7 @@ export default function carryTodos(
   ).forEach(({ title, date, id }: Item) => {
     store.dispatch({
       type: actions.ADD_TODO,
-      payload: { title, date },
+      payload: { title, createdDate: date },
     });
     store.dispatch({ type: actions.DELETE_TODO, payload: { id, date } });
   });

@@ -9,9 +9,27 @@ import reducer from "../../reducer";
 
 const INITIAL_STATE: State = {
   [today]: [
-    { id: "1", title: "todo 1", complete: false, date: today },
-    { id: "2", title: "todo 2", complete: false, date: today },
-    { id: "3", title: "todo 3", complete: true, date: today },
+    {
+      id: "1",
+      title: "todo 1",
+      complete: false,
+      date: today,
+      createdDate: today,
+    },
+    {
+      id: "2",
+      title: "todo 2",
+      complete: false,
+      date: today,
+      createdDate: today,
+    },
+    {
+      id: "3",
+      title: "todo 3",
+      complete: true,
+      date: today,
+      createdDate: today,
+    },
   ],
 };
 

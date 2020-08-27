@@ -3,6 +3,7 @@ export type Item = {
   title: string;
   complete: boolean;
   date: string;
+  createdDate: string;
 };
 
 export type State = {

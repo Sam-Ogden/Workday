@@ -133,7 +133,7 @@ const getWebviewContent = () => `
             todo.value = "";
         }
 
-        function createTodoElement({ title, complete, id, date }) {
+        function createTodoElement({ title, complete, id, date, createdDate }) {
             const handleClick = (e) => {
                 e.preventDefault()
                 vscode.postMessage({
@@ -146,7 +146,7 @@ const getWebviewContent = () => `
             const label = document.createElement("label")
             label.className = complete ? 'complete' : ''
             label.addEventListener("click", handleClick);
-            const todoTitle = \`\${title}\${date !== today ? \` \${date}\` : ''}\`
+            const todoTitle = \`\${title}\${createdDate && createdDate !== today ? \` (\${createdDate})\` : ''}\`
             label.innerHTML = \`<span>\${escapeHTML(todoTitle, false)}</span>\`;
 
             const checkbox = document.createElement("input");
