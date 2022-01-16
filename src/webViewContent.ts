@@ -48,6 +48,7 @@ const getWebviewContent = () => `
         ul label {
             font-size: 18px;
             margin-right: 10px;
+            display: flex;
         }
 
         ul label, ul a {
@@ -65,6 +66,7 @@ const getWebviewContent = () => `
             content: "✔";
             font-size: 20px;
             color: var(--vscode-button-secondaryBackground);
+            cursor: pointer;
         }
 
         label.complete input:after {
